@@ -83,6 +83,9 @@ const faqs = [
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div className="rounded-b-3xl border border-amber-500/20 bg-amber-50 px-4 py-3 text-center text-sm font-semibold text-amber-900 shadow-soft">
+        This website is under development. Features, content, and pricing are subject to change.
+      </div>
       <header className="sticky top-0 z-20 bg-hero-gradient/90 backdrop-blur-xl">
         <div className="flex items-center justify-between border-b border-grace-forest/10 py-4">
           <div className="flex items-center gap-3">
