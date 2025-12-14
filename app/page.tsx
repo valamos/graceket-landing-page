@@ -1,5 +1,6 @@
 import { ImpactBadge } from "../components/ImpactBadge";
 import { AccordionItem } from "../components/AccordionItem";
+import { EmailCaptureForm } from "../components/EmailCaptureForm";
 
 const products = [
   { name: "Handwoven Market Tote", price: "$48", category: "Accessories", impact: "$2.50 donated" },
@@ -377,47 +378,6 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function EmailCaptureForm() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
-
-    if (!emailInput.value.includes("@")) {
-      emailInput.setCustomValidity("Please enter a valid email address.");
-      emailInput.reportValidity();
-      return;
-    }
-
-    emailInput.setCustomValidity("");
-    alert("Thanks for joining Graceket! You'll hear from us soon.");
-    form.reset();
-  };
-
-  return (
-    <form className="flex flex-col gap-3 lg:flex-row" onSubmit={handleSubmit}>
-      <label className="sr-only" htmlFor="email">
-        Email address
-      </label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        required
-        placeholder="you@example.com"
-        className="w-full rounded-full border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:bg-white/20"
-      />
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-semibold text-grace-forest shadow-soft hover:bg-grace-rose/80"
-      >
-       Get updates
-        <ArrowRightIcon />
-      </button>
-    </form>
   );
 }
 
